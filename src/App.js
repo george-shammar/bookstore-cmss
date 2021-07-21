@@ -1,8 +1,10 @@
+import './App.css';
+
 function App() {
   return (
     <div>
-      <header>
-          Bookstore
+      <header className="title">
+        Bookstore
       </header>
     </div>
   );
