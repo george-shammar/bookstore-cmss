@@ -1,8 +1,8 @@
 const App = () => {
     return (
         <>
-            <BookList />
-            <BookForm />
+            <BooksList />
+            <BooksForm />
         </>
     );
 }
