@@ -37,6 +37,6 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-export const selectAllBooks = (state) => state.allBooks;
+const selectAllBooks = (state) => state.allBooks;
 
-export default initialState;
+export { initialState, selectAllBooks };
