@@ -2,6 +2,36 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 
+//initial state
+const Id = () => {
+  return Math.floor((Math.random() * 100) + 1);
+}
+
+const initialState = {
+  allBooks: [
+    { 
+      bookId: "",
+      title: "The Hermit",
+      category: "History"
+    }, 
+    {
+      bookId: "",
+      title: "Queen of Endol",
+      category: "Horror"
+    },
+    {
+      bookId: "",
+      title: "Goals",
+      category: "Learning"
+    },
+    {
+      bookId: "",
+      title: "Helena of Avalor",
+      category: "Kids"
+    }
+  ]
+};
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

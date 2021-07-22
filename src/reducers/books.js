@@ -1,10 +1,5 @@
  //reducers
 
-//initial state
-const initialState = {
-    allBooks: []
-};
-
 // booksReducer
 
 const booksReducer = (state = initialState, action) => {
