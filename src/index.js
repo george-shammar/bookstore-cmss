@@ -3,29 +3,25 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 
 //initial state
-const Id = () => {
-  return Math.floor((Math.random() * 100) + 1);
-}
-
 const initialState = {
   allBooks: [
     { 
-      bookId: Id,
+      bookId: Math.floor((Math.random() * 100) + 1),
       title: "The Hermit",
       category: "History"
     }, 
     {
-      bookId: Id,
+      bookId: Math.floor((Math.random() * 100) + 1),
       title: "Queen of Endol",
       category: "Horror"
     },
     {
-      bookId: Id,
+      bookId: Math.floor((Math.random() * 100) + 1),
       title: "Goals",
       category: "Learning"
     },
     {
-      bookId: Id,
+      bookId: Math.floor((Math.random() * 100) + 1),
       title: "Helena of Avalor",
       category: "Kids"
     }
