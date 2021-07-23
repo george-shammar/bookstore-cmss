@@ -2,7 +2,7 @@ function App() {
   return (
     <div>
       <header>
-          Bookstore
+        Bookstore
       </header>
     </div>
   );
