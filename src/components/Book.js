@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 const Book = (props) => {
   const { book } = props;
   return (
-      <div></div>
+      <div>
+       {book.title}
+      </div>
   )
 
 }

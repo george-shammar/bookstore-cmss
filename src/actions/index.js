@@ -15,3 +15,5 @@ const removeBook = (book) => {
       payload: book
     }
 }
+
+export {createBook, removeBook};
