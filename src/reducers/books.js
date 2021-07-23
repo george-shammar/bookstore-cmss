@@ -1,10 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import { Provider } from 'react-redux';
-import { store } from '../src/reducers/books';
+import { createStore } from 'redux';
 
-//initial state
 const initialState = {
   allBooks: [
     { 
@@ -40,12 +35,27 @@ const initialState = {
   ]
 };
 
+// booksReducer
+const booksReducer = (state = initialState, action) => {
+    switch(action.type) {
+      case 'allBooks/createBook':
+        return {
+          ...state, 
+          allBooks: [...state.allBooks, action.payload]
+      };
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
+      case 'allBooks/removeBook':
+      return {
+        ...state,
+        allBooks: state.allBooks.filter(allBooks => {
+          return (allBooks.id !== action.payload.id)
+        })
+      }
 
-export { initialState };
+      default:
+        return state;
+    }
+}
+const store = createStore(booksReducer);
+
+export { store };
