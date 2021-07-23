@@ -1,5 +1,32 @@
-import initialState from "../index";
- //reducers
+// import { initialState } from "../index";
+import { createStore } from 'redux';
+
+const initialState = {
+    filter: 'George',
+    allBooks: [
+      { 
+        bookId: Math.floor((Math.random() * 100) + 1),
+        title: "The Hermit",
+        category: "History"
+      }, 
+      {
+        bookId: Math.floor((Math.random() * 100) + 1),
+        title: "Queen of Endol",
+        category: "Horror"
+      },
+      {
+        bookId: Math.floor((Math.random() * 100) + 1),
+        title: "Goals",
+        category: "Learning"
+      },
+      {
+        bookId: Math.floor((Math.random() * 100) + 1),
+        title: "Helena of Avalor",
+        category: "Kids"
+      }
+    ]
+  };
+  
 
 // booksReducer
 
@@ -16,7 +43,6 @@ const booksReducer = (state = initialState, action) => {
         ...state,
         allBooks: state.allBooks.filter(allBooks => {
           return (allBooks.id !== action.payload.id)
-          allBooks;
         })
       }
 
@@ -25,4 +51,6 @@ const booksReducer = (state = initialState, action) => {
     }
 }
 
-export default booksReducer;
+const store = createStore(booksReducer);
+
+export { store, initialState };
