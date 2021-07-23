@@ -4,19 +4,18 @@ import PropTypes from 'prop-types';
 const Book = (props) => {
   const { book } = props;
   return (
-      <div>
-       {book.title}
-      </div>
-  )
-
-}
+    <div>
+      {book}
+    </div>
+  );
+};
 
 Book.propTypes = {
-  book: PropTypes.object
+  book: PropTypes,
 };
 
 Book.defaultProps = {
-  book: null
+  book: null,
 };
 
 export default Book;

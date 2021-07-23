@@ -1,14 +1,12 @@
 import React from 'react';
 import BooksForm from '../containers/BooksForm';
-import BooksList from '../containers/BooksList';
+import BooksList from '../containers/BooksList'; /* eslint-disable-line  import/no-cycle */
 
-const App = () => {
-    return (
-      <>
-        <BooksForm />
-        <BooksList />   
-      </>
-    );
-}
+const App = () => (
+  <>
+    <BooksForm />
+    <BooksList />
+  </>
+);
 
 export default App;

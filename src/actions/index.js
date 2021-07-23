@@ -1,19 +1,15 @@
 // create books action
 
-const createBook = (book) => {
-    return {
-      type: 'allBooks/createBook',
-      payload: book
-    }
-}
+const createBook = (book) => ({
+  type: 'allBooks/createBook',
+  payload: book,
+});
 
 // remove books action
 
-const removeBook = (book) => {
-    return {
-      type: 'allBooks/removeBook',
-      payload: book
-    }
-}
+const removeBook = (book) => ({
+  type: 'allBooks/removeBook',
+  payload: book,
+});
 
-export {createBook, removeBook};
+export { createBook, removeBook };
