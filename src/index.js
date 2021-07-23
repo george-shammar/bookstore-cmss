@@ -6,7 +6,6 @@ import { store } from '../src/reducers/books';
 
 //initial state
 const initialState = {
-  filter: 'George',
   allBooks: [
     { 
       bookId: Math.floor((Math.random() * 100) + 1),
@@ -15,7 +14,7 @@ const initialState = {
     }, 
     {
       bookId: Math.floor((Math.random() * 100) + 1),
-      title: "Queen of Endol",
+      title: "Witch of Endol",
       category: "Horror"
     },
     {
@@ -27,6 +26,16 @@ const initialState = {
       bookId: Math.floor((Math.random() * 100) + 1),
       title: "Helena of Avalor",
       category: "Kids"
+    },
+    {
+      bookId: Math.floor((Math.random() * 100) + 1),
+      title: "Orbit",
+      category: "Sci-Fi"
+    },
+    {
+      bookId: Math.floor((Math.random() * 100) + 1),
+      title: "My Watch",
+      category: "Biography"
     }
   ]
 };
@@ -39,4 +48,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-export default initialState;
+export { initialState };
