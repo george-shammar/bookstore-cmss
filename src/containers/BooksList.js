@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { initialState } from '../reducers/books';
+import initialState from '../index';
 
 const selectAllBooks = (state) => initialState.allBooks;
 
