@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-/* eslint-disable */
 import { initialState } from '../reducers/books';
 
 const selectAllBooks = (state) => initialState.allBooks;

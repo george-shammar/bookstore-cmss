@@ -1,5 +1,4 @@
 import React from 'react';
-/* eslint-disable jsx-a11y/label-has-associated-control */
 const BookForm = () => (
   <div>
     <input type="text" placeholder="Title" />

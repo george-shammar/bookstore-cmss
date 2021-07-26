@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './components/App'; /* eslint-disable-line  import/no-cycle */
+import App from './components/App';
 import { store } from './reducers/books';
 
 const initialState = {
