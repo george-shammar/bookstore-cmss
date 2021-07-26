@@ -1,9 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import App from './components/App';
-import store from './reducers/index';
-
 const initialState = {
   allBooks: [
     {
@@ -39,11 +33,24 @@ const initialState = {
   ],
 };
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root'),
-);
+// booksReducer
+const booksReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'allBooks/createBook':
+      return {
+        ...state,
+        allBooks: [...state.allBooks, action.payload],
+      };
 
-export default initialState;
+    case 'allBooks/removeBook':
+      return {
+        ...state,
+        allBooks: state.allBooks.filter((allBooks) => (allBooks.id !== action.payload.id)),
+      };
+
+    default:
+      return state;
+  }
+};
+
+export { initialState, booksReducer };
