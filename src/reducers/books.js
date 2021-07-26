@@ -1,5 +1,3 @@
-import { createStore } from 'redux';
-
 const initialState = {
   allBooks: [
     {
@@ -54,6 +52,5 @@ const booksReducer = (state = initialState, action) => {
       return state;
   }
 };
-const store = createStore(booksReducer);
 
-export { store, initialState };
+export { initialState, booksReducer };
