@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { initialState } from '../reducers/books';
 
-const selectAllBooks = (state) => initialState.allBooks;
+const selectAllBooks = () => initialState.allBooks;
 
 const BooksList = () => {
   const allBooks = useSelector(selectAllBooks);
@@ -18,8 +18,8 @@ const BooksList = () => {
           </tr>
         </thead>
         <tbody>
-          {allBooks.map((book, i) => (
-            <tr key={i}>
+          {allBooks.map((book) => (
+            <tr key={book.bookId}>
               <td>{book.bookId}</td>
               <td>{book.title}</td>
               <td>{book.category}</td>
