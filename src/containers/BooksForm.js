@@ -8,7 +8,7 @@ class BookForm extends React.Component {
       title: '',
       category: ''
     };
-   
+    this.handleChange = this.handleChange.bind(this);
   }
 
   render() {
