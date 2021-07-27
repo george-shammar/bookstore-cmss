@@ -1,8 +1,20 @@
 import React from 'react';
 
-const BookForm = () => (
-  <div>
+class BookForm extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      title: '',
+      category: ''
+    };
+   
+  }
+
+  render() {
+    return (
+  
+  <div>
     <input type="text" placeholder="Title" />
     <label htmlFor="options">
       Category:
@@ -18,6 +30,8 @@ const BookForm = () => (
       <button type="submit">Submit</button>
     </label>
   </div>
-);
+    )
+  }
+};
 
 export default BookForm;
