@@ -12,14 +12,19 @@ class BookForm extends React.Component {
   }
 
   handleChange = () => {
-    
+    const userTitle = document.querySelector('#title').value;
+    const userCategory = document.querySelector('#options').value;
+    this.setState({
+      title: userTitle,
+      next: userCategory,
+    });
   }
 
   render() {
     return (
   
   <div>
-    <input type="text" placeholder="Title" />
+    <input type="text" id="title" placeholder="Title" />
     <label htmlFor="options">
       Category:
       <select id="options">
