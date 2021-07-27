@@ -28,15 +28,24 @@ class BookForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    store.dispatch(createBook(this.state));
-    console.log(store.getState());
+    this.handleChange();
+    const userTitle = document.querySelector('#title').value;
+    const userCategory = document.querySelector('#options').value;
+    const userBookId = Math.floor((Math.random() * 100) + 1);
+    const book = {
+      bookId: userBookId,
+      title: userTitle,
+      category: userCategory,
+    };
+    store.dispatch(createBook(book));
   };
 
   render() {
-    const { title, category } = this.state;
+    const { title, category, bookId } = this.state;
     return (
 
       <div>
+        <h1>{bookId}</h1>
         <h1>{title}</h1>
         <h1>{category}</h1>
         <form onSubmit={this.handleSubmit}>
