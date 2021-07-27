@@ -1,5 +1,6 @@
 import React from 'react';
 import {createBook, removeBook} from '../actions/index';
+import store from '../reducers/index'; 
 
 class BookForm extends React.Component {
   constructor(props) {
