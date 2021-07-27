@@ -1,4 +1,5 @@
 import React from 'react';
+import {createBook, removeBook} from '../actions/index';
 
 class BookForm extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class BookForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    store.dispatch(createBook);
   }
 
   render() {
