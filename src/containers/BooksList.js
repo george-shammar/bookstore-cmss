@@ -4,6 +4,10 @@ import { initialState } from '../reducers/books';
 
 const selectAllBooks = () => initialState.allBooks;
 
+const handleRemoveBook = () => {
+  
+}
+
 const BooksList = () => {
   const allBooks = useSelector(selectAllBooks);
 
