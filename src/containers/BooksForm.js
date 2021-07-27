@@ -11,19 +11,19 @@ class BookForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = () => {
-    const userTitle = document.querySelector('#title').value;
-    const userCategory = document.querySelector('#options').value;
+  handleChange = (userTitle, userCategory) => {
+    userTitle = document.querySelector('#title').value;
+    userCategory = document.querySelector('#options').value;
     this.setState({
       title: userTitle,
       next: userCategory,
     });
   }
 
-  handleSubmit = () => {
-
+  handleSubmit = (e) => {
+    e.preventDefault();
   }
-  
+
   render() {
     return (
   
@@ -40,7 +40,7 @@ class BookForm extends React.Component {
         <option value="Learning">Learning</option>
         <option value="Sci-Fi">Sci-Fi</option>
       </select>
-      <button type="submit">Submit</button>
+      <button type="submit" onSubmit={handleSubmit}>Submit</button>
     </label>
   </div>
     )
