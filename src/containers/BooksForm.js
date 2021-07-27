@@ -1,12 +1,13 @@
 import React from 'react';
-// import { createBook } from '../actions/index';
-// import store from '../reducers/index';
+import { createBook } from '../actions/index';
+import store from '../reducers/index';
 
 class BookForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      bookId: null,
       title: '',
       category: '',
     };
@@ -17,7 +18,9 @@ class BookForm extends React.Component {
   handleChange = () => {
     const userTitle = document.querySelector('#title').value;
     const userCategory = document.querySelector('#options').value;
+    const userBookId = Math.floor((Math.random() * 100) + 1);
     this.setState({
+      bookId: userBookId,
       title: userTitle,
       category: userCategory,
     });
@@ -25,8 +28,8 @@ class BookForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // store.dispatch(createBook(this.state));
-    console.log('It works');
+    store.dispatch(createBook(this.state));
+    console.log(store.getState());
   };
 
   render() {
