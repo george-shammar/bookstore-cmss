@@ -23,6 +23,7 @@ const BooksList = () => {
               <td>{book.bookId}</td>
               <td>{book.title}</td>
               <td>{book.category}</td>
+              <td><button type="button">Remove Book</button></td>
             </tr>
           ))}
         </tbody>
