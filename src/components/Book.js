@@ -6,41 +6,36 @@ import { initialState } from '../reducers/books';
 const selectAllBooks = () => initialState.allBooks;
 
 const Book = (props) => {
-  const { book, handleRemoveBook } = props;
+  const { handleRemove } = props;
 
   const allBooks = useSelector(selectAllBooks);
 
   return (
     <div>
-      <table>
-        <thead>
-          <tr>
-            <th />
-            <th />
-            <th />
+      {/* <table> */}
+      {/* <thead>
+        </thead> */}
+      <tbody>
+        {allBooks.map((book) => (
+          <tr key={book.bookId}>
+            <td>{book.bookId}</td>
+            <td>{book.title}</td>
+            <td>{book.category}</td>
+            <td><button type="submit" onClick={handleRemove}>Remove Book</button></td>
           </tr>
-        </thead>
-        <tbody>
-          {allBooks.map((book) => (
-            <tr key={book.bookId}>
-              <td>{book.bookId}</td>
-              <td>{book.title}</td>
-              <td>{book.category}</td>
-              <td><button type="submit">Remove Book</button></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        ))}
+      </tbody>
+      {/* </table> */}
     </div>
   );
 };
 
 Book.propTypes = {
-  book: PropTypes,
+  handleRemove: PropTypes.func,
 };
 
 Book.defaultProps = {
-  book: null,
+  handleRemove: null,
 };
 
 export default Book;

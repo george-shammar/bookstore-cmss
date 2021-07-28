@@ -1,19 +1,12 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import { useSelector } from 'react-redux';
-// import { initialState } from '../reducers/books';
 import { removeBook } from '../actions/index';
 import store from '../reducers/index';
-import Book from '../components/Book'
-
-// const selectAllBooks = () => initialState.allBooks;
+import Book from '../components/Book';
 
 const BooksList = () => {
   const handleRemoveBook = (book) => {
     store.dispatch(removeBook(book));
   };
-
-  // const allBooks = useSelector(selectAllBooks);
 
   return (
     <div>
@@ -27,16 +20,8 @@ const BooksList = () => {
         </thead>
         <tbody>
           <tr>
-            <td><Books handleRemove={handleRemoveBook} /></td>
+            <td><Book handleRemove={handleRemoveBook} /></td>
           </tr>
-          {/* {allBooks.map((book) => (
-            <tr key={book.bookId}>
-              <td>{book.bookId}</td>
-              <td>{book.title}</td>
-              <td>{book.category}</td>
-              <td onSubmit={handleRemoveBook(book.bookId)}><button type="submit">Remove Book</button></td>
-            </tr>
-          ))} */}
         </tbody>
       </table>
     </div>
