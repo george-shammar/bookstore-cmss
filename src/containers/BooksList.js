@@ -7,12 +7,11 @@ import store from '../reducers/index';
 
 const selectAllBooks = () => initialState.allBooks;
 
-const handleRemoveBook = (book) => {
-  store.dispatch(removeBook(book));
-};
+const BooksList = () => {
+  const handleRemoveBook = (book) => {
+    store.dispatch(removeBook(book));
+  };
 
-const BooksList = (props) => {
-  const { handleRemoveBook } = props;
   const allBooks = useSelector(selectAllBooks);
 
   return (
@@ -27,7 +26,7 @@ const BooksList = (props) => {
         </thead>
         <tbody>
           <tr>
-            <td><Books /></td>
+            <td><Books handleRemove={handleRemoveBook} /></td>
           </tr>
           {/* {allBooks.map((book) => (
             <tr key={book.bookId}>
