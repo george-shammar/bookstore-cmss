@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { initialState } from '../reducers/books';
+// import { initialState } from '../reducers/books';
 // import store from '../reducers/index';
+import { selectAllBooks } from '../reducers/books';
 
-const selectAllBooks = () => initialState.allBooks;
+// const selectAllBooks = () => initialState.allBooks;
 
 const Book = (props) => {
   const { handleRemove } = props;
@@ -16,7 +17,7 @@ const Book = (props) => {
       <table>
         <tbody>
           {allBooks.map((book) => (
-            <tr key={book.bookId}>
+            <tr key={book.id}>
               <td>{book.bookId}</td>
               <td>{book.title}</td>
               <td>{book.category}</td>

@@ -7,7 +7,7 @@ class BookForm extends React.Component {
     super(props);
 
     this.state = {
-      allBooks: []
+      allBooks: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,20 +21,25 @@ class BookForm extends React.Component {
       title: userTitle,
       category: userCategory,
       bookId: UserBookId,
-    }
+    };
     this.setState({
-      allBooks:[userBook]
+      ...this.state, /* eslint-disable-line react/no-access-state-in-setstate */
+      allBooks: [userBook],
     });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.handleChange();
-    
-    
-   
+    const userTitle = document.querySelector('#title').value;
+    const userCategory = document.querySelector('#options').value;
+    const UserBookId = Math.floor((Math.random() * 100) + 1);
+    const userBook = {
+      bookId: UserBookId,
+      title: userTitle,
+      category: userCategory,
     };
-    store.dispatch(createBook(book));
+    store.dispatch(createBook(userBook));
     console.log(store.getState());
   };
 

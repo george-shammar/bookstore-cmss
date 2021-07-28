@@ -1,5 +1,7 @@
-const initialState = {
-  allBooks: [
+/* eslint-disable */
+// import store from './index';
+
+const initialState = [
     {
       bookId: Math.floor((Math.random() * 100) + 1),
       title: 'The Hermit',
@@ -30,27 +32,31 @@ const initialState = {
       title: 'My Watch',
       category: 'Biography',
     },
-  ],
-};
+  ];
 
 // booksReducer
-const booksReducer = (state = initialState, action) => {
+const booksReducer = (allBooks = initialState, action) => {
   switch (action.type) {
     case 'allBooks/createBook':
       return {
-        ...state,
-        allBooks: [...state.allBooks, action.payload],
+        ...allBooks,
+        allBooks: [...allBooks, action.payload],
       };
 
-    case 'allBooks/removeBook':
-      return {
-        ...state,
-        allBooks: state.allBooks.filter((allBooks) => (allBooks.id !== action.payload.id)),
-      };
-
-    default:
-      return state;
+    // case 'allBooks/removeBook':
+    //   return {
+    //     ...state,
+    //     allBooks: state.allBooks.filter((allBooks) => (allBooks.id !== action.payload.id)),
+    //   };
+// =======
+case 'allBooks/removeBook':
+  return [...allBooks, action.payload]
+default:
+  return allBooks;
+// ==========
+    // default:
+    //   return state;
   }
 };
-
-export { initialState, booksReducer };
+const selectAllBooks = (state) => state.allBooks;
+export { booksReducer, selectAllBooks };
