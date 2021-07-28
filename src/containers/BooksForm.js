@@ -17,10 +17,13 @@ class BookForm extends React.Component {
     const userTitle = document.querySelector('#title').value;
     const userCategory = document.querySelector('#options').value;
     const UserBookId = Math.floor((Math.random() * 100) + 1);
-    this.setState({
+    const userBook = {
       title: userTitle,
       category: userCategory,
       bookId: UserBookId,
+    }
+    this.setState({
+      allBooks:[userBook]
     });
   }
 
