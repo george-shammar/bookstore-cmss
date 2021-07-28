@@ -7,9 +7,7 @@ class BookForm extends React.Component {
     super(props);
 
     this.state = {
-      bookId: null,
-      title: '',
-      category: '',
+      allBooks: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,36 +16,28 @@ class BookForm extends React.Component {
   handleChange = () => {
     const userTitle = document.querySelector('#title').value;
     const userCategory = document.querySelector('#options').value;
-    const userBookId = Math.floor((Math.random() * 100) + 1);
+    const UserBookId = Math.floor((Math.random() * 100) + 1);
     this.setState({
-      bookId: userBookId,
       title: userTitle,
       category: userCategory,
+      bookId: UserBookId,
     });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.handleChange();
-    const userTitle = document.querySelector('#title').value;
-    const userCategory = document.querySelector('#options').value;
-    const userBookId = Math.floor((Math.random() * 100) + 1);
-    const book = {
-      bookId: userBookId,
-      title: userTitle,
-      category: userCategory,
+    
+    
+   
     };
     store.dispatch(createBook(book));
+    console.log(store.getState());
   };
 
   render() {
-    const { title, category, bookId } = this.state;
     return (
-
       <div>
-        <h1>{bookId}</h1>
-        <h1>{title}</h1>
-        <h1>{category}</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" id="title" placeholder="Title" />
           <label htmlFor="options">
