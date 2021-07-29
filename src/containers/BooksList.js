@@ -1,35 +1,33 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../actions/index';
-import store from '../reducers/index';
 import Book from '../components/Book';
 
 const BooksList = () => {
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
   const handleRemoveBook = (book) => {
-    store.dispatch(removeBook(book));
+    dispatch(removeBook(book));
   };
 
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Book Id</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><Book handleRemove={handleRemoveBook} /></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Remove Book</th>
+        </tr>
+      </thead>
+      <tbody>
+        {books.map((book) => (
+          <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
+        ))}
+      </tbody>
+    </table>
   );
 };
-
-// BooksList.propTypes = {
-//   books: PropTypes.arrayOf(PropTypes.object).isRequired,
-// };
 
 export default BooksList;
