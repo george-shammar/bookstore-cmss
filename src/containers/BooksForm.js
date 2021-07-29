@@ -1,70 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
 import { createBook } from '../actions/index';
-import store from '../reducers/index';
 
-class BookForm extends React.Component {
-  constructor(props) {
-    super(props);
+const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
-    this.state = {
-      allBooks: [],
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+const BooksForm = () => {
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const dispatch = useDispatch();
 
-  handleChange = () => {
-    const userTitle = document.querySelector('#title').value;
-    const userCategory = document.querySelector('#options').value;
-    const UserBookId = Math.floor((Math.random() * 100) + 1);
-    const userBook = {
-      title: userTitle,
-      category: userCategory,
-      bookId: UserBookId,
-    };
-    this.setState({
-      ...this.state, /* eslint-disable-line react/no-access-state-in-setstate */
-      allBooks: [userBook],
-    });
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.handleChange();
-    const userTitle = document.querySelector('#title').value;
-    const userCategory = document.querySelector('#options').value;
-    const UserBookId = Math.floor((Math.random() * 100) + 1);
-    const userBook = {
-      bookId: UserBookId,
-      title: userTitle,
-      category: userCategory,
-    };
-    store.dispatch(createBook(userBook));
-    console.log(store.getState());
+  const handleChangeTitle = (e) => {
+    const data = e.target.value;
+    setTitle(data);
   };
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" id="title" placeholder="Title" />
-          <label htmlFor="options">
-            Category:
-            <select id="options">
-              <option value="Action">Action</option>
-              <option value="Biography">Biography</option>
-              <option value="History">History</option>
-              <option value="Horror">Horror</option>
-              <option value="Kids">Kids</option>
-              <option value="Learning">Learning</option>
-              <option value="Sci-Fi">Sci-Fi</option>
-            </select>
-            <button type="submit">Submit</button>
-          </label>
-        </form>
-      </div>
-    );
-  }
-}
+  const handleChangeCategory = (e) => {
+    const data = e.target.value;
+    setCategory(data);
+  };
 
-export default BookForm;
+  const handleSubmit = (e) => {
+    const book = {
+      id: uuidv4(),
+      title,
+      category,
+    };
+    dispatch(createBook(book));
+    setTitle('');
+    setCategory('');
+    e.preventDefault();
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="title">
+        Title
+        <input type="text" name="title" value={title} onChange={handleChangeTitle} />
+      </label>
+      <label htmlFor="title">
+        Category
+        <select name="category" value={category} onChange={handleChangeCategory}>
+          {CATEGORIES.map((category) => (
+            <option key={uuidv4()} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </label>
+      <button type="submit" name="button">Submit</button>
+    </form>
+  );
+};
+
+export default BooksForm;
