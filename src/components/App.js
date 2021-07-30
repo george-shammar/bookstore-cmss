@@ -6,7 +6,7 @@ import '../stylesheets/App.css';
 const App = () => (
   <>
     <div className="container mt-5 border">
-      <div className="header">
+      <div className="header border py-2 px-5">
         <div className="left-header">
           <h1>Bookstore CMS</h1>
           <p>BOOKS</p>
