@@ -1,12 +1,10 @@
-import { createStore, combineReducers } from 'redux';
-import { booksReducer } from './books';
+import { combineReducers } from 'redux';
+import bookReducer from './books';
 
 const reducers = {
-  allBooks: booksReducer,
+  books: bookReducer,
 };
 
 const rootReducer = combineReducers(reducers);
 
-const store = createStore(rootReducer);
-
-export default store;
+export default rootReducer;

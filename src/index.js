@@ -1,43 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import App from './components/App';
-import store from './reducers/index';
+import rootReducer from './reducers/index';
 
-const initialState = {
-  allBooks: [
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'The Hermit',
-      category: 'History',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'Witch of Endol',
-      category: 'Horror',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'Goals',
-      category: 'Learning',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'Helena of Avalor',
-      category: 'Kids',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'Orbit',
-      category: 'Sci-Fi',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'My Watch',
-      category: 'Biography',
-    },
-  ],
-};
+const initialState = [
+  {
+    id: Math.floor((Math.random() * 100) + 1),
+    title: 'The Hermit',
+    category: 'History',
+  },
+  {
+    id: Math.floor((Math.random() * 100) + 1),
+    title: 'Queen of Volantis',
+    category: 'Horror',
+  },
+  {
+    id: Math.floor((Math.random() * 100) + 1),
+    title: 'Chase',
+    category: 'Biography',
+  },
+  {
+    id: Math.floor((Math.random() * 100) + 1),
+    title: 'Battle of Mozanga',
+    category: 'Action',
+  },
+  {
+    id: Math.floor((Math.random() * 100) + 1),
+    title: 'Helena of Avalor',
+    category: 'Kids',
+  },
+  {
+    id: Math.floor((Math.random() * 100) + 1),
+    title: 'Saturn',
+    category: 'Sci-Fi',
+  },
+];
+
+const store = createStore(rootReducer, { books: initialState });
 
 ReactDOM.render(
   <Provider store={store}>
@@ -45,5 +46,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'),
 );
-
-export default initialState;

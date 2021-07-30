@@ -1,56 +1,17 @@
-const initialState = {
-  allBooks: [
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'The Hermit',
-      category: 'History',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'Witch of Endol',
-      category: 'Horror',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'Goals',
-      category: 'Learning',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'Helena of Avalor',
-      category: 'Kids',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'Orbit',
-      category: 'Sci-Fi',
-    },
-    {
-      bookId: Math.floor((Math.random() * 100) + 1),
-      title: 'My Watch',
-      category: 'Biography',
-    },
-  ],
-};
+const initialState = [];
 
-// booksReducer
-const booksReducer = (state = initialState, action) => {
+const bookReducer = (state = initialState, action) => {
+  let allBooks = [...state];
   switch (action.type) {
     case 'allBooks/createBook':
-      return {
-        ...state,
-        allBooks: [...state.allBooks, action.payload],
-      };
-
+      allBooks = [...allBooks, action.payload];
+      return allBooks;
     case 'allBooks/removeBook':
-      return {
-        ...state,
-        allBooks: state.allBooks.filter((allBooks) => (allBooks.id !== action.payload.id)),
-      };
-
+      allBooks = state.filter((allBooks) => (allBooks.id !== action.payload.id));
+      return allBooks;
     default:
-      return state;
+      return allBooks;
   }
 };
 
-export { initialState, booksReducer };
+export default bookReducer;
