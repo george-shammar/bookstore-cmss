@@ -8,7 +8,7 @@ const App = () => (
     <div className="container mt-5 border">
       <div className="header border py-2 px-5">
         <div className="left-header">
-          <h1>Bookstore CMS</h1>
+          <h1 className="blue">Bookstore CMS</h1>
           <p>BOOKS</p>
           <p>CATEGORIES</p>
         </div>

@@ -14,3 +14,7 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.blue {
+    color: rgb(98, 122, 228)
+}
