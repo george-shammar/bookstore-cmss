@@ -3,7 +3,10 @@
     align-items: center;
     justify-content: space-between;
 }
-/* 
-.user {
-    
-} */
+
+.left-header {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+}

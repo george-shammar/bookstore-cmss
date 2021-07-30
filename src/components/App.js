@@ -6,9 +6,11 @@ import '../stylesheets/App.css';
 const App = () => (
   <>
     <div className="header">
-      <h1>Bookstore CMS</h1>
-      <p>BOOKS</p>
-      <p>CATEGORIES</p>
+      <div className="left-header">
+        <h1>Bookstore CMS</h1>
+        <p>BOOKS</p>
+        <p>CATEGORIES</p>
+      </div>
       <div className="user"><i className="fas fa-user" /></div>
     </div>
     <BooksForm />
