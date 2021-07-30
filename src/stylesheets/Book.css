@@ -38,3 +38,9 @@
   border-style: solid;
   border-width: 5px;
 }
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
