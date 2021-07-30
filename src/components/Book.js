@@ -7,7 +7,7 @@ const Book = (props) => {
 
   return (
     <div className="px-5 ">
-      <div className="border py-4 px-3 mb-3">
+      <div className="border py-4 px-3 mb-3 d-flex">
         <div className="card-title">
           <p className="font s-size">{book.category}</p>
           <h6 className="fw-bold font title">{book.title}</h6>
@@ -17,6 +17,19 @@ const Book = (props) => {
           <button type="button" className="text font s-size">Comments</button>
           <button type="button" className="text font s-size" value={book} onClick={() => handleRemove(book)}>Remove</button>
           <button type="button" className="text font s-size">Edit</button>
+        </div>
+        <div className="completed d-flex">
+          <div className="circle" />
+          <div className="completedInfo">
+            <p className="percentage">64%</p>
+            <p className="completedText">Completed</p>
+          </div>
+        </div>
+        <div>|</div>
+        <div>
+          <p className="s-size font">CURRENT CHAPTER</p>
+          <p className="s-size font">Chapter 17</p>
+          <p className="bg-primary mt-3 s-size p-1 white font">UPDATE PROGRESS</p>
         </div>
       </div>
     </div>
