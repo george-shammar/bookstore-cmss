@@ -7,6 +7,13 @@ import Book from '../components/Book';
 const BooksList = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
+  const filter = useSelector((state) => state.filter);
+  
+
+  const handleFilter = (e) => {
+    const data = e.target.value;
+    dispatch(changeFilter(data));
+  };
 
   const handleRemove = (book) => {
     dispatch(removeBook(book));
