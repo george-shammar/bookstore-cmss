@@ -5,7 +5,7 @@ import '../stylesheets/App.css';
 
 const App = () => (
   <>
-    <div className="container mt-5 border">
+    <div className="container mt-5 border shadow-lg mb-5 bg-body rounded">
       <BooksList />
       <BooksForm />
     </div>
