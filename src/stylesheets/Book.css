@@ -44,3 +44,16 @@
     justify-content: space-between;
     flex-direction: row;
 }
+
+.card-title {
+    width: 50%;
+}
+
+.right-card {
+    margin-right: 10%;
+}
+
+.line {
+    height: 4.5rem;
+    border: solid 1px #e8e8e8;
+}
