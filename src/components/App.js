@@ -9,10 +9,10 @@ const App = () => (
       <div className="header border py-2 px-5">
         <div className="left-header">
           <h1 className="blue">Bookstore CMS</h1>
-          <p>BOOKS</p>
-          <p>CATEGORIES</p>
+          <p className="mt-3">BOOKS</p>
+          <p className="mt-3">CATEGORIES</p>
         </div>
-        <div className="user"><i className="fas fa-user" /></div>
+        <div className="blue"><i className="fas fa-user" /></div>
       </div>
       <BooksForm />
       <BooksList />
