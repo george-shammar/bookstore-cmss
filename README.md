@@ -2,6 +2,8 @@
 
 This is a bookstore application that stores book by category.
 
+![screenShot](./bookstore.png)
+
 ## Built With
 - React
 - JavaScript
