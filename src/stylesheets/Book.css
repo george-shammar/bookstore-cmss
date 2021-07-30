@@ -1,3 +1,18 @@
 .white {
     color: white;
 }
+
+.text {
+    height: 1.188rem;
+    margin: 0.188rem 0.938rem 0.125rem 0;
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4386bf;
+    border: 0;
+    background-color: #fff;
+}

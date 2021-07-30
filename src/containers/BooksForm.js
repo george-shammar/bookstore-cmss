@@ -44,7 +44,7 @@ const BooksForm = () => {
             </option>
           ))}
         </select>
-        <button  className="bg-primary white" type="submit" name="button">Add Book</button>
+        <button className="bg-primary white" type="submit" name="button">Add Book</button>
       </form>
     </div>
   );

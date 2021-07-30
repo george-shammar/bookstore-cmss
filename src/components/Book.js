@@ -9,7 +9,11 @@ const Book = (props) => {
     <div>
       <p>{book.category}</p>
       <h4 className="fw-bold">{book.title}</h4>
-      <div><button type="button" name="button" value={book} onClick={() => handleRemove(book)}>Filter</button></div>
+      <div className="blue d-flex">
+        <button type="button" className="text">Comments</button>
+        <button type="button" className="text" value={book} onClick={() => handleRemove(book)}>Remove</button>
+        <button type="button" className="text">Edit</button>
+      </div>
     </div>
   );
 };
