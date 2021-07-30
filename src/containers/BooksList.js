@@ -15,7 +15,7 @@ const BooksList = () => {
     <table>
       <thead>
         <tr>
-          <th>ID</th>
+          <th>Book-Id</th>
           <th>Title</th>
           <th>Category</th>
           <th>Remove Book</th>
