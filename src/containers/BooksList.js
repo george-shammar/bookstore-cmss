@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeBook, changeFilter } from '../actions/index';
 import { CategoryFilter } from '../components/categoryFilter';
 import Book from '../components/Book';
+import '../stylesheets/Book.css';
 
 const BooksList = () => {
   const books = useSelector((state) => state.books);
@@ -21,23 +22,19 @@ const BooksList = () => {
 
   return (
     <>
-      <CategoryFilter filter={filter} handleFilter={handleFilter} />
-      ,
-      <table>
-        <thead>
-          <tr>
-            <th>Book-Id</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Remove Book</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filtered.map((book) => (
-            <Book key={book.id} book={book} handleRemove={handleRemove} />
-          ))}
-        </tbody>
-      </table>
+      <div className="header border py-2 px-5 mb-5">
+        <div className="left-header">
+          <h1 className="blue font fw-bold fs-4">Bookstore CMS</h1>
+          <p className="mt-3 fs-6">BOOKS</p>
+          <CategoryFilter className="mt-3" filter={filter} handleFilter={handleFilter} />
+        </div>
+        <div className="blue"><i className="fas fa-user" /></div>
+      </div>
+      <div>
+        {filtered.map((book) => (
+          <Book key={book.id} book={book} handleRemove={handleRemove} />
+        ))}
+      </div>
     </>
   );
 };

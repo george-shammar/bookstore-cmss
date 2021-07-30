@@ -13,28 +13,33 @@ const initialState = [
   },
   {
     id: Math.floor((Math.random() * 100) + 1),
-    title: 'Queen of Volantis',
+    title: 'The Wizard of Oz',
     category: 'Horror',
   },
   {
     id: Math.floor((Math.random() * 100) + 1),
-    title: 'Chase',
-    category: 'Biography',
+    title: 'The Hermit',
+    category: 'History',
   },
   {
     id: Math.floor((Math.random() * 100) + 1),
-    title: 'Battle of Mozanga',
-    category: 'Action',
-  },
-  {
-    id: Math.floor((Math.random() * 100) + 1),
-    title: 'Helena of Avalor',
+    title: 'Elena of Avalor',
     category: 'Kids',
   },
   {
     id: Math.floor((Math.random() * 100) + 1),
-    title: 'Saturn',
-    category: 'Sci-Fi',
+    title: 'My Watch',
+    category: 'Biography',
+  },
+  {
+    id: Math.floor((Math.random() * 100) + 1),
+    title: 'The Expatriate',
+    category: 'Action',
+  },
+  {
+    id: Math.floor((Math.random() * 100) + 1),
+    title: 'The Odin Project',
+    category: 'Learning',
   },
 ];
 

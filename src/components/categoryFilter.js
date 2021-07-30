@@ -9,7 +9,7 @@ const CategoryFilter = (props) => {
   const allFilters = ['All', ...Categories];
 
   return (
-    <select name="filter" value={filter} onChange={handleFilter}>
+    <select placeholder="CATEGORIES" name="filter" value={filter} onChange={handleFilter}>
       {allFilters.map((category) => (
         <option key={uuidv4()} value={category}>
           {category}

@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { createBook } from '../actions/index';
+import '../stylesheets/book-form.css';
 
-const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+const categories = ['Category', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
 const BooksForm = () => {
   const [title, setTitle] = useState('');
@@ -33,20 +34,21 @@ const BooksForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="title" placeholder="title" value={title} onChange={changeTitle} required />
-      <label htmlFor="title">
-        Category
-        <select name="category" value={category} onChange={changeCategory}>
+    <div className="form mt-5 mx-5 font">
+      <hr />
+      <h6 className="py-3 fw-bold">Add New Book</h6>
+      <form onSubmit={handleSubmit}>
+        <input className="book-title py-1" type="text" name="title" placeholder="Book Title" value={title} onChange={changeTitle} required />
+        <select className="category py-2" value={category} onChange={changeCategory}>
           {categories.map((category) => (
             <option key={uuidv4()} value={category}>
               {category}
             </option>
           ))}
         </select>
-      </label>
-      <button type="submit" name="button">Submit</button>
-    </form>
+        <button className="bg-primary white px-5 py-1" type="submit" name="button">Add Book</button>
+      </form>
+    </div>
   );
 };
 

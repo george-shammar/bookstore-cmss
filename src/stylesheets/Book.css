@@ -1,0 +1,59 @@
+.white {
+  color: white;
+}
+
+.text {
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  border: 0;
+  background-color: #fff;
+}
+
+.font {
+  font-family: 'Roboto Slab', serif;
+}
+
+.s-size {
+  font-size: 0.7rem;
+  margin: 0%;
+}
+
+.title {
+  margin: 0%;
+}
+
+.circle {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 50%;
+  border-color: #e8e8e8 #379cf6 #379cf6 #e8e8e8;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.card-title {
+  width: 50%;
+}
+
+.right-card {
+  margin-right: 10%;
+}
+
+.line {
+  height: 4.5rem;
+  border: solid 1px #e8e8e8;
+}
