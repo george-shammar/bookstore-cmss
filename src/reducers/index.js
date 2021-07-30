@@ -1,13 +1,16 @@
-/* eslint-disable */
-import { createStore, combineReducers } from 'redux';
-import { booksReducer } from './books';
+import { combineReducers } from 'redux';
+import bookReducer from './books';
 
-const reducers = {
-  allBooks: booksReducer,
-};
+const rootReducer = combineReducers({ books: bookReducer });
 
-const rootReducer = combineReducers(reducers);
+export default rootReducer;
 
-const store = createStore(rootReducer);
+// const reducers = {
+//   allBooks: booksReducer,
+// };
 
-export default store;
+// const rootReducer = combineReducers(reducers);
+
+// const store = createStore(rootReducer);
+
+// export default store;

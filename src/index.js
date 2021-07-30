@@ -1,49 +1,51 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { v4 as uuidv4 } from 'uuid';
 import App from './components/App';
-import store from './reducers/index';
+import rootReducer from './reducers/index';
 
-// const initialState = {
-//   allBooks: [
-//     {
-//       bookId: Math.floor((Math.random() * 100) + 1),
-//       title: 'The Hermit',
-//       category: 'History',
-//     },
-//     {
-//       bookId: Math.floor((Math.random() * 100) + 1),
-//       title: 'Witch of Endol',
-//       category: 'Horror',
-//     },
-//     {
-//       bookId: Math.floor((Math.random() * 100) + 1),
-//       title: 'Goals',
-//       category: 'Learning',
-//     },
-//     {
-//       bookId: Math.floor((Math.random() * 100) + 1),
-//       title: 'Helena of Avalor',
-//       category: 'Kids',
-//     },
-//     {
-//       bookId: Math.floor((Math.random() * 100) + 1),
-//       title: 'Orbit',
-//       category: 'Sci-Fi',
-//     },
-//     {
-//       bookId: Math.floor((Math.random() * 100) + 1),
-//       title: 'My Watch',
-//       category: 'Biography',
-//     },
-//   ],
-// };
+const BOOKS = [
+  {
+    id: uuidv4(),
+    title: 'The Hermit',
+    category: 'History',
+  },
+  {
+    id: uuidv4(),
+    title: 'Queen of Volantis',
+    category: 'Horror',
+  },
+  {
+    id: uuidv4(),
+    title: 'Chase',
+    category: 'Biography',
+  },
+  {
+    id: uuidv4(),
+    title: 'Battle of Mozanga',
+    category: 'Action',
+  },
+  {
+    id: uuidv4(),
+    title: 'Helena of Avalor',
+    category: 'Kids',
+  },
+  {
+    id: uuidv4(),
+    title: 'Saturn',
+    category: 'Sci-Fi',
+  },
+];
+
+const store = createStore(rootReducer, { books: BOOKS });
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root'),
 );
-
-// export default initialState;
