@@ -5,12 +5,11 @@ const Book = (props) => {
   const { book, handleRemove } = props;
 
   return (
-    <tr>
-      <td>{book.id}</td>
-      <td>{book.title}</td>
-      <td>{book.category}</td>
-      <td><button type="button" name="button" value={book} onClick={() => handleRemove(book)}>Remove Book</button></td>
-    </tr>
+    <div>
+      <p>{book.category}</p>
+      <h4 className="fw-bold">{book.title}</h4>
+      <div><button type="button" name="button" value={book} onClick={() => handleRemove(book)}>Remove Book</button></div>
+    </div>
   );
 };
 
