@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../actions/index';
+import { removeBook, changeFilter } from '../actions/index';
+import { CategoryFilter } from '../components/categoryFilter';
 import Book from '../components/Book';
 
 const BooksList = () => {
