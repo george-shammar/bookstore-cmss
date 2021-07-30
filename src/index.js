@@ -2,38 +2,37 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { v4 as uuidv4 } from 'uuid';
 import App from './components/App';
 import rootReducer from './reducers/index';
 
 const BOOKS = [
   {
-    id: uuidv4(),
+    id: Math.floor((Math.random() * 100) + 1),
     title: 'The Hermit',
     category: 'History',
   },
   {
-    id: uuidv4(),
+    id: Math.floor((Math.random() * 100) + 1),
     title: 'Queen of Volantis',
     category: 'Horror',
   },
   {
-    id: uuidv4(),
+    id: Math.floor((Math.random() * 100) + 1),
     title: 'Chase',
     category: 'Biography',
   },
   {
-    id: uuidv4(),
+    id: Math.floor((Math.random() * 100) + 1),
     title: 'Battle of Mozanga',
     category: 'Action',
   },
   {
-    id: uuidv4(),
+    id: Math.floor((Math.random() * 100) + 1),
     title: 'Helena of Avalor',
     category: 'Kids',
   },
   {
-    id: uuidv4(),
+    id: Math.floor((Math.random() * 100) + 1),
     title: 'Saturn',
     category: 'Sci-Fi',
   },
