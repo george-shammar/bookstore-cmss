@@ -7,8 +7,8 @@ const Book = (props) => {
 
   return (
     <div>
-      <p>{book.category}</p>
-      <h4 className="fw-bold">{book.title}</h4>
+      <p className="font">{book.category}</p>
+      <h4 className="fw-bold font">{book.title}</h4>
       <div className="blue d-flex">
         <button type="button" className="text">Comments</button>
         <button type="button" className="text" value={book} onClick={() => handleRemove(book)}>Remove</button>
