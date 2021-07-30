@@ -38,7 +38,11 @@ const initialState = [
   },
 ];
 
-const store = createStore(rootReducer, { books: initialState });
+const state = {
+  books: initialState,
+  filter: 'All',
+}
+const store = createStore(rootReducer, state);
 
 ReactDOM.render(
   <Provider store={store}>
