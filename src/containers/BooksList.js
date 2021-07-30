@@ -22,7 +22,6 @@ const BooksList = () => {
   return (
     <>
       <CategoryFilter filter={filter} handleFilter={handleFilter} />
-      ,
       <table>
         <thead>
           <tr>
