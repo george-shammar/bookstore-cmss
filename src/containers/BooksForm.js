@@ -37,15 +37,15 @@ const BooksForm = () => {
     <div className="form mt-5 mx-5">
       <h4 className="py-3">Add New Book</h4>
       <form onSubmit={handleSubmit}>
-        <input className="book-title" type="text" name="title" placeholder="Book Title" value={title} onChange={changeTitle} required />
-        <select name="category" value={category} onChange={changeCategory}>
+        <input className="book-title py-1" type="text" name="title" placeholder="Book Title" value={title} onChange={changeTitle} required />
+        <select className="category py-2" value={category} onChange={changeCategory}>
           {categories.map((category) => (
             <option key={uuidv4()} value={category}>
               {category}
             </option>
           ))}
         </select>
-        <button className="bg-primary white" type="submit" name="button">Add Book</button>
+        <button className="bg-primary white px-5 py-1" type="submit" name="button">Add Book</button>
       </form>
     </div>
   );

@@ -1,5 +1,9 @@
 .book-title {
-    width: 50%;
+    width: 54%;
+    margin-right: 2%;
+}
+.category {
+    width: 24%;
     margin-right: 2%;
 }
 
