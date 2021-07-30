@@ -34,7 +34,7 @@ const BooksForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="title" placeholder="title" value={title} onChange={changeTitle} />
+      <input type="text" name="title" placeholder="title" value={title} onChange={changeTitle} required />
       <label htmlFor="title">
         Category
         <select name="category" value={category} onChange={changeCategory}>
