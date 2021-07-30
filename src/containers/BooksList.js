@@ -7,7 +7,7 @@ const BooksList = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
-  const handleRemoveBook = (book) => {
+  const handleRemove = (book) => {
     dispatch(removeBook(book));
   };
 
@@ -23,7 +23,7 @@ const BooksList = () => {
       </thead>
       <tbody>
         {books.map((book) => (
-          <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
+          <Book key={book.id} book={book} handleRemove={handleRemove} />
         ))}
       </tbody>
     </table>
