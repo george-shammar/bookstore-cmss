@@ -14,8 +14,8 @@ const App = () => (
         </div>
         <div className="blue"><i className="fas fa-user" /></div>
       </div>
-      <BooksForm />
       <BooksList />
+      <BooksForm />
     </div>
   </>
 );
