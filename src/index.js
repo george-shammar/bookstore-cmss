@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import App from './components/App';
 import rootReducer from './reducers/index';
 
-const BOOKS = [
+const initialState = [
   {
     id: Math.floor((Math.random() * 100) + 1),
     title: 'The Hermit',
@@ -38,7 +38,7 @@ const BOOKS = [
   },
 ];
 
-const store = createStore(rootReducer, { books: BOOKS });
+const store = createStore(rootReducer, { books: initialState });
 
 ReactDOM.render(
   <React.StrictMode>
