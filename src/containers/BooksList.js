@@ -8,7 +8,7 @@ const BooksList = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
   const filter = useSelector((state) => state.filter);
-  
+  const filtered = books.filter((book) => book.category === filter || filter === 'All');
 
   const handleFilter = (e) => {
     const data = e.target.value;
@@ -20,6 +20,8 @@ const BooksList = () => {
   };
 
   return (
+    <>
+    <CategoryFilter filter={filter} handleFilter={handleFilter} />,
     <table>
       <thead>
         <tr>
@@ -30,11 +32,12 @@ const BooksList = () => {
         </tr>
       </thead>
       <tbody>
-        {books.map((book) => (
+        {filtered.map((book) => (
           <Book key={book.id} book={book} handleRemove={handleRemove} />
         ))}
       </tbody>
     </table>
+    </>
   );
 };
 
