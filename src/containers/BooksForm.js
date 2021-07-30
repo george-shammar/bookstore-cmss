@@ -34,8 +34,9 @@ const BooksForm = () => {
   };
 
   return (
-    <div className="form mt-5 mx-5">
-      <h4 className="py-3">Add New Book</h4>
+    <div className="form mt-5 mx-5 font">
+      <hr />
+      <h6 className="py-3 fw-bold">Add New Book</h6>
       <form onSubmit={handleSubmit}>
         <input className="book-title py-1" type="text" name="title" placeholder="Book Title" value={title} onChange={changeTitle} required />
         <select className="category py-2" value={category} onChange={changeCategory}>
