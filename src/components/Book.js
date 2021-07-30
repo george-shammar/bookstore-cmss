@@ -21,14 +21,14 @@ const Book = (props) => {
         <div className="completed d-flex mt-2">
           <div className="circle mx-3" />
           <div className="completedInfo">
-            <p className="percentage">64%</p>
+            <p className="percentage">52%</p>
             <p className="completedText">Completed</p>
           </div>
         </div>
         <div className="line" />
         <div className="right-card">
           <p className="s-size font">CURRENT CHAPTER</p>
-          <p className="s-size font">Chapter 17</p>
+          <p className="s-size font">Chapter 2</p>
           <p className="bg-primary mt-3 s-size p-1 white font">UPDATE PROGRESS</p>
         </div>
       </div>
