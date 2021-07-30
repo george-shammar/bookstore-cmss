@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { createBook } from '../actions/index';
 
-const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+const categories = ['Category', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
 const BooksForm = () => {
   const [title, setTitle] = useState('');
@@ -33,10 +33,10 @@ const BooksForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="title" placeholder="title" value={title} onChange={changeTitle} required />
-      <label htmlFor="title">
-        Category
+    <div>
+      <h4>Add New Book</h4>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="title" placeholder="Book Title" value={title} onChange={changeTitle} required />
         <select name="category" value={category} onChange={changeCategory}>
           {categories.map((category) => (
             <option key={uuidv4()} value={category}>
@@ -44,9 +44,9 @@ const BooksForm = () => {
             </option>
           ))}
         </select>
-      </label>
-      <button type="submit" name="button">Submit</button>
-    </form>
+        <button  className="bg-primary white" type="submit" name="button">Add Book</button>
+      </form>
+    </div>
   );
 };
 

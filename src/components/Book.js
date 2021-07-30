@@ -9,7 +9,7 @@ const Book = (props) => {
     <div>
       <p>{book.category}</p>
       <h4 className="fw-bold">{book.title}</h4>
-      <div><button className="bg-primary white" type="button" name="button" value={book} onClick={() => handleRemove(book)}>Add Book</button></div>
+      <div><button type="button" name="button" value={book} onClick={() => handleRemove(book)}>Filter</button></div>
     </div>
   );
 };
