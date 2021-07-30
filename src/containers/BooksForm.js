@@ -3,26 +3,26 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { createBook } from '../actions/index';
 
-const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
 const BooksForm = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
-  const handleChangeTitle = (e) => {
+  const changeTitle = (e) => {
     const data = e.target.value;
     setTitle(data);
   };
 
-  const handleChangeCategory = (e) => {
+  const changeCategory = (e) => {
     const data = e.target.value;
     setCategory(data);
   };
 
   const handleSubmit = (e) => {
     const book = {
-      id: uuidv4(),
+      id: Math.floor((Math.random() * 100) + 1),
       title,
       category,
     };
@@ -34,14 +34,11 @@ const BooksForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="title">
-        Title
-        <input type="text" name="title" value={title} onChange={handleChangeTitle} />
-      </label>
+      <input type="text" name="title" placeholder="title" value={title} onChange={changeTitle} />
       <label htmlFor="title">
         Category
-        <select name="category" value={category} onChange={handleChangeCategory}>
-          {CATEGORIES.map((category) => (
+        <select name="category" value={category} onChange={changeCategory}>
+          {categories.map((category) => (
             <option key={uuidv4()} value={category}>
               {category}
             </option>
