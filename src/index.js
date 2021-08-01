@@ -18,11 +18,6 @@ const initialState = [
   },
   {
     id: Math.floor((Math.random() * 100) + 1),
-    title: 'The Hermit',
-    category: 'History',
-  },
-  {
-    id: Math.floor((Math.random() * 100) + 1),
     title: 'Elena of Avalor',
     category: 'Kids',
   },

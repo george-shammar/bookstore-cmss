@@ -1,6 +1,7 @@
 # bookstore-cmss
 
-This is a bookstore application that stores book by category.
+This is a bookstore application built with React and Redux. It gives a user the opportunity 
+to add their books of choice in different categories. Users are also able to filter specific books based on categories. Specific books can also be deleted from the store. This project demonstrates how Redux can be used to manage complex states in a React application.
 
 ![screenShot](./bookstore.png)
 
